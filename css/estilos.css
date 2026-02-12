@@ -1,0 +1,338 @@
+/* --- RESET BÁSICO --- */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* --- ESTRUCTURA GENERAL --- */
+.padre {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.margen-interno {
+    padding: 0 50px;
+}
+
+/* --- HEADER Y MENU --- */
+.header {
+    background-image: url("../imagenes/bg8.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.menu {
+    background: rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-flow: row nowrap;
+    height: 100px;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.logo {
+    flex: 1 1 auto;
+}
+
+.logo a {
+    color: white;
+    font-size: 30px;
+}
+
+.logo a:hover {
+    color: #343434;
+}
+
+.nav {
+    flex: 5 1 auto;
+}
+
+.nav a {
+    color: white;
+    font-size: 11px;
+    text-transform: uppercase;
+    padding: 0 10px;
+    letter-spacing: 2px;
+}
+
+.nav a:hover {
+    color: #343434;
+}
+
+.social {
+    flex: 1 1 auto;
+    display: flex;
+}
+
+.social a {
+    font-size: 18px;
+    color: #fff;
+    padding: 0 5px;
+}
+
+.social a:hover {
+    color: #343434;
+}
+
+.texto-principal {
+    height: 580px;
+    display: flex;
+    align-items: center;
+}
+
+h1 {
+    font-family: "lora", serif;
+    font-size: 21px;
+    color: #fff;
+    font-weight: 300;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* --- SECCION PRINCIPAL (ALINEACIÓN) --- */
+.section {
+    background: #f7f7f7;
+    display: flex;
+    flex-flow: row nowrap; 
+    /* ESTA PROPIEDAD ALINEA EL ASIDE Y EL ARTICULO ARRIBA */
+    align-items: flex-start; 
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- COLUMNA IZQUIERDA: NOTICIAS --- */
+.articulo {
+    flex: 3; 
+    display: flex;
+    flex-flow: row wrap;
+    gap: 20px;
+    padding: 0; 
+}
+
+/* --- TARJETA INDIVIDUAL --- */
+.article {
+    background: #ececec;
+    color: #444;
+    font-size: 13px;
+    letter-spacing: 1px;
+    flex: 0 1 calc(50% - 10px); /* 2 columnas en escritorio */
+    display: flex;
+    flex-direction: column;
+    
+    /* Forzamos margen superior 0 para alineación perfecta */
+    margin-top: 0; 
+    margin-bottom: 0;
+    
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+.article img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.article-content {
+    padding: 15px;
+    background: #ececec;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.article h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+    color: #222;
+}
+
+.article p {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.article a {
+    display: inline-block;
+    width: fit-content;
+    background: #000;
+    color: #fff;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 15px 15px 15px;
+    border-radius: 0;
+    transition: background 0.3s;
+}
+
+.article a:hover {
+    background: #333;
+}
+
+/* --- COLUMNA DERECHA: ASIDE --- */
+.aside {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 275px; 
+    max-width: 300px;
+    
+    /* Aseguramos que empiece arriba */
+    margin-top: 0;
+}
+
+.aside-item, .publicidad {
+    width: 100%;
+    background: #000;
+    margin-top: 0; /* Alineación perfecta con las noticias */
+}
+
+.aside-item h4, .publicidad h4 {
+    background: #000;
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+    font-weight: 600;
+}
+
+.aside-item img, .publicidad img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- FOOTER --- */
+.footer {
+    background: #000;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    color: white;
+}
+
+.pie {
+    text-align: center;
+}
+
+.pie a {
+    color: #fff;
+    font-size: 11px;
+    text-transform: uppercase;
+    padding: 0 10px;
+    letter-spacing: 2px;
+}
+
+/* --- RESPONSIVE (MEDIA QUERIES) --- */
+
+/* 1. TABLETS (769px - 1120px) */
+/* Aside a la derecha, Noticias en 1 columna */
+@media all and (max-width: 1120px) {
+    .menu {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+    .article {
+        flex: 1 1 100%; /* Noticias ocupan todo el ancho disponible */
+    }
+    .nav {
+        font-size: 10px; 
+    }
+    h1 {
+        font-size: 15px;
+    }
+    .texto-principal {
+        height: 450px;
+    }
+}
+
+/* 2. MÓVILES (Menos de 768px) */
+/* Aside abajo y horizontal (3 columnas) */
+@media all and (max-width: 768px) {
+    
+    .section {
+        flex-direction: column; /* Cambia a vertical */
+        align-items: center;
+    }
+
+    .articulo {
+        width: 100%;
+    }
+
+    .article {
+        flex: 1 1 100%;
+    }
+
+    /* --- ASIDE HORIZONTAL (3 ITEMS) --- */
+    .aside {
+        width: 100%;
+        display: flex;
+        flex-direction: row;            /* Fila */
+        flex-wrap: nowrap;              /* No bajar de línea */
+        justify-content: space-between; /* Espacio igual */
+        gap: 2%;                        
+        max-width: none;
+    }
+
+    .aside-item, .publicidad {
+        width: 32%;                     /* 3 columnas */
+        max-width: none;
+        margin: 0;
+    }
+
+    .aside-item h4, .publicidad h4 {
+        font-size: 10px;                
+        padding: 5px;
+    }
+    
+    .aside-item img, .publicidad img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .menu {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+    
+    .nav {
+        margin: 10px 0;
+        text-align: center;
+    }
+}
+
+/* 3. PANTALLAS MUY PEQUEÑAS */
+@media all and (max-width: 650px){
+    .off { display: none; }
+}
